@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Price Prediction</title>
+</head>
+<body>
+    <h2>Flight Price Prediction</h2>
+    <form action="/predict" method="post">
+        <label for="Airline">Airline:</label>
+        <select id="Airline" name="Airline">
+            <option value="Airline_A">Airline_A</option>
+            <option value="Airline_B">Airline_B</option>
+            <option value="Airline_C">Airline_C</option>
+        </select><br><br>
+
+        <label for="Source">Source:</label>
+        <select id="Source" name="Source">
+            <option value="City_A">City_A</option>
+            <option value="City_B">City_B</option>
+            <option value="City_C">City_C</option>
+            <option value="City_D">City_D</option>
+        </select><br><br>
+
+        <label for="Destination">Destination:</label>
+        <select id="Destination" name="Destination">
+            <option value="City_E">City_E</option>
+            <option value="City_F">City_F</option>
+            <option value="City_G">City_G</option>
+            <option value="City_H">City_H</option>
+        </select><br><br>
+
+        <label for="Duration">Duration (hours):</label>
+        <input type="text" id="Duration" name="Duration"><br><br>
+
+        <label for="Total_Stops">Total Stops:</label>
+        <input type="text" id="Total_Stops" name="Total_Stops"><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+    {% if prediction_text %}
+    <h3>{{ prediction_text }}</h3>
+    {% endif %}
+</body>
+</html>
